@@ -17,9 +17,8 @@ body {
     background-color: rgb(40, 40, 40);
     color: white;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0px;
-    padding: 0px;
 }
 
 h1 {
@@ -48,6 +47,7 @@ h5 {
 p {
     font-size: 22px;
     margin: 0px;
+    overflow: auto;
 }
 
 .links {
@@ -95,40 +95,35 @@ header {
     border-color: deepskyblue;
 }
 
-
 @keyframes button-hover {
     100% {
         background-color: rgb(65, 65, 65);
     }
 }
 
-
-
 #intro {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #intro img {
-    height: 60%;
-    width: auto;
+    height: auto;
+    width: 500px;
     border-radius: 50%;
-    margin: 0% 3% 0% 5%;
-    display: flex;
+    margin: 0% 3% 0% 0%;
 }
 
 #intro #profile-text {
-    width: 60%;
-    background-color: inherit;
+    line-height: 25px;
     /*border: solid;
     border-color: rgb(80, 80, 80);
     padding: 0px 2% 0px 2%;
     text-align: justify;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     border-radius: 10px;*/
-    line-height: 25px;
 }
 
 #profile-text p{
@@ -136,24 +131,27 @@ header {
     line-height: normal;
 }
 
-#profile-text h1, p {
-    margin: 0.5em 0px;
-}
-
 #about {
     width: 100vw;
-    text-align: center;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+#info {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+#about h2 {
+    margin-top: 0.2em;
+}
 
 .info-section {
-    margin: 4vh 0vw;
-    border-top: solid;
-    padding-top: 10vh;
-    width: 40%
+    width: 30vw;
+    text-align: center;
 }
 
 .info-section img {
@@ -181,38 +179,39 @@ header {
 
 #work {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
 }
 
 #contact {
     width: 100vw;
-    height: 50vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     font-size: 28px;
     align-items: center;
-    text-align: center;
 }
 
 #contact-links {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: center;
-    vertical-align: middle;
+    margin-bottom: 3em;
 }
 
 #contact-links a {
     text-decoration: none;
     color: white;
-    margin: 0em 2em;
+    margin: 0em 1em;
+}
+
+#contact-links img {
+    margin-right: 0.2em;
 }
 
 #contact-links a, img {
     vertical-align: top;
 }
-
-
 
 
 footer {
@@ -233,8 +232,5 @@ footer {
     }
     .navbar {
         font-size: 14px;
-    }
-    #intro img{
-        height: 30%;
     }
 }
