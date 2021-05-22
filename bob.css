@@ -29,7 +29,7 @@ h1 {
 
 h2 {
     font-size: 70px;
-    margin: 0.7em 0em;
+    padding: 1em 0em;
 }
 
 h3 {
@@ -182,6 +182,31 @@ header {
     height: auto;
     display: flex;
 }
+
+#skills {
+    width: 100vw;
+    height: auto;
+}
+
+#skills h2{
+    text-align: center;
+}
+
+#skills ul {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    max-height: 22em;
+    align-items: center;
+}
+
+#skills li {
+    height: 2em;
+    margin-right: 2em;
+}
+
 
 #contact {
     width: 100vw;
