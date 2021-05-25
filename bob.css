@@ -11,6 +11,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -47,7 +48,6 @@ h5 {
 p {
     font-size: 22px;
     margin: 0px;
-    overflow: auto;
 }
 
 .links {
@@ -113,17 +113,7 @@ header {
     height: auto;
     width: 500px;
     border-radius: 50%;
-    margin: 0% 3% 0% 0%;
-}
-
-#intro #profile-text {
-    line-height: 25px;
-    /*border: solid;
-    border-color: rgb(80, 80, 80);
-    padding: 0px 2% 0px 2%;
-    text-align: justify;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    border-radius: 10px;*/
+    margin: 0px 50px;
 }
 
 #profile-text p{
@@ -132,26 +122,28 @@ header {
 }
 
 #about {
+    font-size: 30px;
     width: 100vw;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#info {
-    display: flex;
-    justify-content: space-evenly;
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5em 15em;
+    grid-gap: 2em 0vw;
+    grid-template-areas:
+        "header header header"
+        "education experience achieve";
 }
 
 #about h2 {
-    margin-top: 0.2em;
+    grid-area: header;
+    justify-self: center;
 }
 
 .info-section {
-    width: 30vw;
+    width: auto;
     text-align: center;
+    justify-self: center;
+
 }
 
 .info-section img {
@@ -177,6 +169,18 @@ header {
     margin-top: 0.8em;
 }
 
+#education {
+    grid-area: education;
+}
+
+#experience {
+    grid-area: experience;
+}
+
+#achieve {
+    grid-area: achieve;
+}
+
 #work {
     width: 100vw;
     height: auto;
@@ -195,21 +199,20 @@ header {
 
 #abilities-list {
     font-size: 30px;
-    display: grid;
-    grid-template-columns: 30vw 30vw;
-    grid-template-rows: 1.5em 10em 1.5em 5em 1.5em 2em;
-    grid-gap: 2em 3vw;
+    display: flex;
+    flex-direction: column;
 }
 
 #abilities-list h3 {
     font-size: 40px;
-    grid-column: 1/3;
-    justify-self: center;
-    align-self: end;
 }
 
-#abilities-list ul{
+#abilities-list ul {
     list-style: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-bottom: 2em;
 }
 
 /*#skills ul {
@@ -263,19 +266,157 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
+    #about {
+        font-size: 30px;
+        width: 100vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 5em repeat(3, 7em);
+        grid-gap: 2em 0vw;
+        grid-template-areas:
+            "header"
+            "education"
+            "experience" 
+            "achieve";
+    }
+}
+
+@media (max-width: 1200px) {
     h1 {
-        font-size: 50px;
+        font-size: 80px;
+    }
+    #profile-text p {
+        font-size: 35px;
+        line-height: normal;
+    }
+}
+
+@media (max-width: 1000px) {
+    #intro {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    #profile-text p {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    #profile-text p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    #intro img {
+        width: 400px;
+    }
+    h1 {
+        font-size: 60px;
+        margin: 0px 50px;
     }
 
     h2 {
-        font-size: 40px;
+        font-size: 52px;
     }
 
-    p {
-        font-size: 14px;
+    h3 {
+        font-size: 42px;
     }
-    .navbar {
-        font-size: 14px;
+
+    h4 {
+        font-size: 28px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+    }
+
+    #profile-text p {
+        font-size: 25px;
+        margin: 0px 50px;
+    }
+
+    #abilities-list h3 {
+        font-size: 30px;
+    }
+
+    #abilities-list ul {
+        columns: 1;
+        font-size: 22px;
+    }
+
+    #contact-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact-links a {
+        text-decoration: none;
+        color: white;
+        margin: 1em 1em;
+    }
+}
+
+@media (max-width: 450px) {
+    #intro img {
+        width: 300px;
+        margin: 0px 10px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: 0px 20px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 15px;
+    }
+
+    #profile-text p {
+        font-size: 20px;
+        margin: 0px 20px;
+    }
+
+    #abilities-list h3 {
+        font-size: 25px;
+    }
+
+    #abilities-list ul {
+        font-size: 18px;
+    }
+
+    #contact-links a {
+        font-size: 18px;
+    }
+
+    #contact-links img {
+        max-width: 18px;
     }
 }
